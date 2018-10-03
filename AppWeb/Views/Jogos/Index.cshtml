@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AppWeb.Models.JogosModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2><b style="color:white">Jogos dessa rodada</b></h2>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            <b style="color:white">Escudo do Time 1</b>
+        </th>
+
+        <th>
+            <b style="color:white">Escudo do Time 2</b>
+        </th>
+        <th>
+            <b style="color:white">Gols Time 1</b>
+        </th>
+        <th>
+            <b style="color:white">Gols Time 2</b>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+
+            <td>
+                @*@Html.DisplayFor(modelItem => item.EscudoUm)*@
+                <img src="@item.EscudoUm" style="max-width:80px" />
+            </td>
+
+            <td>
+                @*@Html.DisplayFor(modelItem => item.EscudoDois)*@
+                <img src="@item.EscudoDois" style="max-width:80px" />
+            </td>
+            <td>
+                <b style="color:white">@Html.DisplayFor(modelItem => item.GolsUm)</b> 
+            </td>
+            <td>
+                <b style="color:white">@Html.DisplayFor(modelItem => item.GolsDois)</b> 
+            </td>
+            <td>
+                <b>@Html.ActionLink("Editar", "Edit", new { id = item.Id })</b> 
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    <b>@Html.ActionLink("Finalizar essa rodada", "FinalizarRodada")</b> 
+</div>

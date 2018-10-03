@@ -1,0 +1,37 @@
+﻿@model IEnumerable<AppWeb.Models.TorneioModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color:white">Torneios iniciados</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            <b style="color:white">Nome do torneio</b>
+        </th>
+        <th>
+            <b style="color:white">Quantidade de times</b>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <b style="color:white">@Html.DisplayFor(modelItem => item.Nome)</b> 
+            </td>
+            <td>
+                <b style="color:white">@Html.DisplayFor(modelItem => item.Qnt_Times)</b> 
+            </td>
+            <td>
+                <b style="color:white">@Html.ActionLink("Abrir torneio", "Index", "Jogos", new { id = item.Id }, null)</b> 
+
+            </td>
+        </tr>
+    }
+
+</table>

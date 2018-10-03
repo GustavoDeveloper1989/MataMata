@@ -1,0 +1,40 @@
+﻿@model AppWeb.Models.TimeModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2><b style="color:white">Excluir time</b></h2>
+
+<h3><b style="color:white">Tem certeza que deseja excluir esse time?</b></h3>
+<div>
+    <h4><b style="color:white">Dados do time:</b></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b style="color:white">@Html.DisplayNameFor(model => model.Nome)</b>
+        </dt>
+
+        <dd>
+            <b style="color:white">@Html.DisplayFor(model => model.Nome)</b>
+        </dd>
+
+        <dt>
+            <b style="color:white">@Html.DisplayNameFor(model => model.EscudoUrl)</b>
+        </dt>
+
+        <dd>          
+            <img src="@Html.DisplayFor(model => model.EscudoUrl)" style="max-width:100px" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Confirmar exclusão" class="btn btn-default" /> |
+            <b>@Html.ActionLink("Voltar", "Index")</b>
+        </div>
+    }
+</div>

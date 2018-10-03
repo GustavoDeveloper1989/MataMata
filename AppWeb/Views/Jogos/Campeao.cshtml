@@ -1,0 +1,36 @@
+﻿@model AppWeb.Models.TimeModel
+
+@{
+    ViewBag.Title = "Campeao";
+}
+
+<h2><b style="color:white">Vencedor da competição</b></h2>
+
+<div>
+    <h4><b style="color:white">Dados do vencedor:</b></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b style="color:white">Nome do time:</b>
+        </dt>
+
+        <dd>
+            <b style="color:white">@Html.DisplayFor(model => model.Nome)</b>
+        </dd>
+
+        <dt>
+            <b style="color:white">Escudo do time:</b>
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.EscudoUrl)*@
+            <img src="@Html.DisplayFor(model => model.EscudoUrl)" style="max-width:100px" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    <b>@Html.ActionLink("Voltar", "Index", "Torneio")</b>
+
+</p>

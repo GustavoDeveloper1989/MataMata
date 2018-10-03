@@ -1,0 +1,74 @@
+﻿@model AppWeb.Models.JogosModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>JogosModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Torneio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Torneio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeUm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeUm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EscudoUm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EscudoUm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeDois)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeDois)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EscudoDois)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EscudoDois)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GolsUm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GolsUm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GolsDois)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GolsDois)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

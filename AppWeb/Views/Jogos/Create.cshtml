@@ -1,0 +1,88 @@
+﻿@model AppWeb.Models.JogosModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>JogosModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id_Torneio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Id_Torneio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Id_Torneio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeUm, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TimeUm, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TimeUm, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EscudoUm, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EscudoUm, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EscudoUm, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeDois, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TimeDois, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TimeDois, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EscudoDois, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EscudoDois, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EscudoDois, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GolsUm, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GolsUm, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GolsUm, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GolsDois, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GolsDois, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GolsDois, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

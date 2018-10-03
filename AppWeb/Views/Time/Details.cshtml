@@ -1,0 +1,35 @@
+﻿@model AppWeb.Models.TimeModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2><b style="color:white">Detalhes da equipe</b></h2>
+
+<div>
+    <h4><b style="color:white">Informações</b></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b style="color:white">Nome da equipe:</b>
+        </dt>
+
+        <dd>
+            <b style="color:white">@Html.DisplayFor(model => model.Nome)</b>
+        </dd>
+
+        <dt>
+            <b style="color:white">Foto do escudo:</b>
+        </dt>
+
+        <dd>
+           
+            <img src=" @Html.DisplayFor(model => model.EscudoUrl)" style="max-width:60px" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <b>@Html.ActionLink("Editar equipe", "Edit", new { id = Model.Id }) |</b>
+    <b>@Html.ActionLink("Voltar", "Index")</b>
+</p>

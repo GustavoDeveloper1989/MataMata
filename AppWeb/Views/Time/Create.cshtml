@@ -1,0 +1,48 @@
+﻿@model AppWeb.Models.TimeModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="color:white"><b>Crie uma nova equipe</b></h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4><b style="color:white">Dados a serem informados:</b></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <b style="color:white">@Html.Label("Nome do time:", htmlAttributes: new { @class = "control-label col-md-2" })</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b style="color:white">@Html.Label("Url do escudo do time:", htmlAttributes: new { @class = "control-label col-md-2" })</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EscudoUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EscudoUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Criar equipe" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
